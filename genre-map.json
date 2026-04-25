@@ -1,0 +1,183 @@
+[
+  {
+    "genre": "K-Pop",
+    "keywords": ["k-pop", "k pop", "korean pop", "korean r&b", "korean indie"]
+  },
+  {
+    "genre": "J-Pop",
+    "keywords": ["j-pop", "j pop", "japanese pop", "city pop", "j-rock", "shibuya-kei"]
+  },
+  {
+    "genre": "Anime",
+    "keywords": ["anime", "vocaloid", "j-core", "anison"]
+  },
+  {
+    "genre": "Urbano Latino",
+    "keywords": ["reggaeton", "latin trap", "trap latino", "urbano latino", "latin urban", "dembow", "perreo", "afro-trap"]
+  },
+  {
+    "genre": "Latin Pop",
+    "keywords": ["latin pop", "pop latino", "musica mexicana", "grupero", "norteno", "corridos", "banda", "ranchera", "tejano"]
+  },
+  {
+    "genre": "Latin Tropical",
+    "keywords": ["salsa", "cumbia", "merengue", "bachata", "bolero", "vallenato", "porro", "mambo", "cha-cha"]
+  },
+  {
+    "genre": "Latin Rock",
+    "keywords": ["latin rock", "latin alternative", "rock en espanol", "latin metal", "rock argentino", "rock chileno"]
+  },
+  {
+    "genre": "Metal",
+    "keywords": [
+      "metal", "metalcore", "deathcore", "grindcore", "thrash",
+      "death metal", "black metal", "doom metal", "sludge metal",
+      "post-metal", "djent", "mathcore", "nu-metal"
+    ]
+  },
+  {
+    "genre": "Punk",
+    "keywords": [
+      "punk", "hardcore", "emo", "screamo", "post-hardcore",
+      "post-punk", "new wave", "ska punk", "skate punk"
+    ]
+  },
+  {
+    "genre": "Indie",
+    "keywords": [
+      "indie", "bedroom pop", "dream pop", "shoegaze", "chillwave",
+      "lo-fi", "lo fi", "psychedelic pop", "art pop", "chamber pop",
+      "freak folk", "neo-psychedelic"
+    ]
+  },
+  {
+    "genre": "Alternative",
+    "keywords": [
+      "alternative", "alt-rock", "grunge", "post-grunge",
+      "britpop", "madchester", "noise rock", "college rock"
+    ]
+  },
+  {
+    "genre": "Hard Rock",
+    "keywords": ["hard rock", "glam rock", "glam metal", "hair metal", "southern rock", "stoner rock"]
+  },
+  {
+    "genre": "Classic Rock",
+    "keywords": ["classic rock", "heartland rock", "album rock", "arena rock", "blues rock", "progressive rock", "psychedelic rock", "folk rock", "country rock"]
+  },
+  {
+    "genre": "Rock",
+    "keywords": ["rock"]
+  },
+  {
+    "genre": "House",
+    "keywords": [
+      "house", "deep house", "tech house", "tropical house",
+      "future house", "garage", "afro house", "soulful house"
+    ]
+  },
+  {
+    "genre": "Techno",
+    "keywords": ["techno", "detroit techno", "industrial techno", "minimal techno"]
+  },
+  {
+    "genre": "Trance",
+    "keywords": ["trance", "psytrance", "progressive trance", "uplifting trance", "goa trance"]
+  },
+  {
+    "genre": "DnB",
+    "keywords": ["drum and bass", "dnb", "drum & bass", "jungle", "neurofunk", "liquid funk", "liquid dnb"]
+  },
+  {
+    "genre": "Dubstep",
+    "keywords": ["dubstep", "brostep", "riddim", "melodic dubstep"]
+  },
+  {
+    "genre": "EDM",
+    "keywords": [
+      "edm", "big room", "electro house", "progressive house",
+      "future bass", "complextro", "moombahton", "bounce"
+    ]
+  },
+  {
+    "genre": "Synthwave",
+    "keywords": [
+      "synthwave", "retrowave", "darksynth", "outrun", "vaporwave",
+      "synth-pop", "synthpop", "new wave", "electropop"
+    ]
+  },
+  {
+    "genre": "Ambient",
+    "keywords": ["ambient", "new age", "drone", "dark ambient", "meditation", "nature sounds"]
+  },
+  {
+    "genre": "Electronic",
+    "keywords": ["electronic", "electronica", "electro", "idm", "experimental", "glitch", "club"]
+  },
+  {
+    "genre": "Hip-Hop",
+    "keywords": [
+      "hip hop", "hip-hop", "rap", "trap", "drill", "grime",
+      "conscious hip hop", "east coast hip hop", "west coast hip hop",
+      "southern hip hop", "mumble rap", "crunk", "g-funk"
+    ]
+  },
+  {
+    "genre": "R&B / Soul",
+    "keywords": [
+      "r&b", "soul", "neo soul", "funk", "gospel", "motown",
+      "quiet storm", "contemporary r&b", "new jack swing", "disco"
+    ]
+  },
+  {
+    "genre": "Pop",
+    "keywords": ["pop"]
+  },
+  {
+    "genre": "Jazz",
+    "keywords": [
+      "jazz", "bebop", "swing", "bossa nova", "samba", "smooth jazz",
+      "jazz fusion", "big band", "vocal jazz", "cool jazz", "latin jazz"
+    ]
+  },
+  {
+    "genre": "Blues",
+    "keywords": ["blues", "electric blues", "chicago blues", "delta blues"]
+  },
+  {
+    "genre": "Country",
+    "keywords": [
+      "country", "bluegrass", "americana", "outlaw country",
+      "honky tonk", "country pop", "bro-country", "alt-country"
+    ]
+  },
+  {
+    "genre": "Folk",
+    "keywords": [
+      "folk", "acoustic", "singer-songwriter", "new acoustic",
+      "celtic", "contemporary folk"
+    ]
+  },
+  {
+    "genre": "Classical",
+    "keywords": [
+      "classical", "orchestral", "opera", "chamber music",
+      "baroque", "contemporary classical", "neoclassical", "piano"
+    ]
+  },
+  {
+    "genre": "Reggae",
+    "keywords": ["reggae", "ska", "dancehall", "dub", "roots reggae"]
+  },
+  {
+    "genre": "World",
+    "keywords": [
+      "world", "afrobeat", "afropop", "afro", "flamenco",
+      "indian", "arabic", "turkish", "afrikaans", "highlife"
+    ]
+  },
+  {
+    "genre": "Otros",
+    "keywords": []
+  }
+]
