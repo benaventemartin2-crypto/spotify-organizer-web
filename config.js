@@ -1,11 +1,10 @@
 // ─── Spotify ──────────────────────────────────────────────────────────────────
 // Safe to commit — PKCE flow doesn't need the client_secret.
 // Get it at: https://developer.spotify.com/dashboard
-export const CLIENT_ID = 'TU_SPOTIFY_CLIENT_ID_AQUI';
+export const CLIENT_ID = 'e92296a78a9d4c19ad9b4b1f1e7351c7';
 
 // ─── Last.fm ──────────────────────────────────────────────────────────────────
-// Free key: https://www.last.fm/api/account/create
-export const LASTFM_API_KEY = 'TU_LASTFM_API_KEY_AQUI';
+export const LASTFM_API_KEY = 'c08ec84b84a36746f91ac0ac895bcf93';
 
 // ─── Redirect URI ─────────────────────────────────────────────────────────────
 // Auto-detected from browser URL — works on localhost AND GitHub Pages.

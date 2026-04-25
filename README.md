@@ -1,100 +1,76 @@
 # Spotify Genre Organizer
 
-Web app que organiza tus **Liked Songs** de Spotify en hasta 5 playlists por género.  
-Funciona con login de Spotify — cualquier usuario puede usarla desde el navegador.
+Web app que organiza tus Liked Songs de Spotify en hasta 5 playlists por género.  
+Los usuarios solo hacen click en "Iniciar sesión con Spotify" — no necesitan configurar nada.
 
-**Live:** `https://TU_USUARIO.github.io/spotify-organizer-web/`
+**Live:** https://benaventemartin2-crypto.github.io/spotify-organizer-web/
 
 ---
 
-## Setup (una sola vez)
+## Para los usuarios (cero setup)
 
-### 1. Fork o clona este repo en GitHub
+1. Visitan la URL
+2. Hacen click en **Iniciar sesión con Spotify**
+3. Spotify les pide permiso → aceptan
+4. La app lee sus Liked Songs y crea las playlists en su cuenta automáticamente
+5. El botón **Refresh** agrega las canciones nuevas sin duplicar
 
-### 2. Crea una Spotify App
+No necesitan cuenta de desarrollador, no tocan ningún archivo, no saben que existe un `config.js`.
+
+---
+
+## Setup del desarrollador (una sola vez)
+
+Tú haces esto una vez. Los usuarios nunca lo ven.
+
+### 1. Crea tu Spotify App
 
 1. Ve a [developer.spotify.com/dashboard](https://developer.spotify.com/dashboard)
-2. Click **Create app**
-3. En **Redirect URIs** agrega las dos:
-   - `http://localhost:5500/` (para desarrollo local)
+2. **Create app** → ponle cualquier nombre (ej. "Genre Organizer")
+3. En **Redirect URIs** agrega:
+   - `http://localhost:5500/` (para probar en local)
    - `https://TU_USUARIO.github.io/spotify-organizer-web/`
-4. Activa **Web API**
-5. Copia el **Client ID** (el Client Secret NO se necesita)
+4. Activa **Web API** → guarda
+5. Copia el **Client ID** (el Client Secret no se necesita gracias a PKCE)
 
-### 3. Consigue una API key de Last.fm
+### 2. Consigue un API key de Last.fm
 
 1. Ve a [last.fm/api/account/create](https://www.last.fm/api/account/create)
-2. Crea una cuenta gratuita y copia tu API key
+2. Regístrate gratis y copia tu API key
 
-### 4. Edita `config.js`
+### 3. Edita `config.js`
 
 ```js
 export const CLIENT_ID      = 'tu_client_id_de_spotify';
 export const LASTFM_API_KEY = 'tu_api_key_de_lastfm';
 ```
 
-> Ambas claves son seguras para commitear — el flujo PKCE no necesita Client Secret,  
-> y la API de Last.fm es de solo lectura.
+Ambas claves son seguras para commitear — el Client ID es público por diseño (PKCE), y Last.fm es solo lectura.
 
-### 5. Habilita GitHub Pages
-
-En **Settings → Pages → Source** selecciona la rama `gh-pages`.  
-GitHub Actions deployará automáticamente cada vez que hagas push a `main`.
-
----
-
-## Cómo funciona
-
-1. El usuario hace login con su cuenta de Spotify (OAuth 2.0 + PKCE)
-2. La app lee todas sus Liked Songs
-3. Consulta el género de cada artista via Last.fm (con caché en localStorage)
-4. Agrupa en los 5 géneros más populares; el resto va a "Otros"
-5. Crea o actualiza las playlists `Género - Rock`, `Género - Hip-Hop`, etc.
-6. El botón **Refresh** agrega canciones nuevas sin duplicar las existentes
-
----
-
-## Desarrollo local
-
-Abre `index.html` con cualquier servidor estático (no funciona con `file://`):
+### 4. Sube a GitHub y activa Pages
 
 ```bash
-# Con VS Code: instala la extensión "Live Server" y abre con Go Live
-# O con Python:
-python -m http.server 5500
-# O con Node:
-npx serve .
+git remote add origin https://github.com/TU_USUARIO/spotify-organizer-web.git
+git push -u origin main
 ```
+
+En **Settings → Pages → Source** selecciona la rama `gh-pages`.  
+GitHub Actions hace el deploy automáticamente en cada push.
 
 ---
 
-## Estructura
+## Límite de usuarios de Spotify
 
-```
-spotify-organizer-web/
-├── index.html              ← UI (3 pantallas: landing / running / results)
-├── style.css               ← Tema Spotify oscuro
-├── config.js               ← CLIENT_ID y LASTFM_API_KEY (editar aquí)
-├── genre-map.json          ← 34 reglas de normalización de géneros
-├── src/
-│   ├── main.js             ← Punto de entrada, lógica de UI
-│   ├── auth.js             ← OAuth 2.0 + PKCE
-│   ├── spotify-api.js      ← Wrapper de Spotify API (fetch)
-│   ├── lastfm.js           ← Last.fm API + caché en localStorage
-│   ├── genre-normalizer.js ← Clasificador de géneros
-│   └── organizer.js        ← Orquestación principal
-└── .github/workflows/
-    └── deploy.yml          ← Auto-deploy a GitHub Pages
-```
+Por defecto, una Spotify App nueva está en **modo desarrollo**: solo 25 usuarios, y debes agregarlos manualmente en el dashboard (User Management).
+
+Para acceso ilimitado, pide **Extended Quota Mode** desde el dashboard de tu app → es un formulario simple, gratis, y Spotify lo aprueba en pocos días.
 
 ---
 
 ## Personalizar géneros
 
-Edita `genre-map.json`. Cada regla:
+Edita `genre-map.json`. El orden importa: las reglas más arriba tienen prioridad.
 
 ```json
 { "genre": "Metal", "keywords": ["metal", "metalcore", "deathcore"] }
 ```
-
-El orden importa: las reglas más arriba tienen prioridad.
