@@ -49,8 +49,9 @@ export class SpotifyAPI {
 
     if (!res.ok) {
       const err = await res.json().catch(() => ({}));
-      const reason = err?.error?.message || err?.error?.reason || res.statusText;
-      throw new Error(`Spotify ${method} ${path} → ${res.status}: ${reason}`);
+      const msg    = err?.error?.message || res.statusText;
+      const reason = err?.error?.reason  ? ` (${err.error.reason})` : '';
+      throw new Error(`Spotify ${method} ${path} → ${res.status}: ${msg}${reason}`);
     }
 
     return res.json();
