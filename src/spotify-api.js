@@ -49,7 +49,8 @@ export class SpotifyAPI {
 
     if (!res.ok) {
       const err = await res.json().catch(() => ({}));
-      throw new Error(`Spotify ${method} ${path} → ${res.status}: ${err?.error?.message || res.statusText}`);
+      const reason = err?.error?.message || err?.error?.reason || res.statusText;
+      throw new Error(`Spotify ${method} ${path} → ${res.status}: ${reason}`);
     }
 
     return res.json();
@@ -89,7 +90,7 @@ export class SpotifyAPI {
 
   createPlaylist(userId, name, description) {
     return this._req('POST', '/me/playlists', {
-      body: { name, description, public: true },
+      body: { name, description, public: false },
     });
   }
 

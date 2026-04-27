@@ -115,19 +115,7 @@ export class Organizer {
       const skipped      = uris.length - newUris.length;
 
       if (newUris.length > 0) {
-        try {
-          await this.api.addTracksToPlaylist(pl.id, newUris);
-        } catch (err) {
-          if (!err.message.includes('403')) throw err;
-          // Playlist locked — create fresh
-          pl = await this.api.createPlaylist(user.id, name, DESCRIPTION);
-          await this.api.addTracksToPlaylist(pl.id, uris);
-          stats.created++;
-          stats.added += uris.length;
-          results.push({ genre, total: uris.length, added: uris.length, skipped: 0, isNew: true });
-          this._emit('playlist-done', { genre, total: uris.length, added: uris.length, skipped: 0, isNew: true });
-          continue;
-        }
+        await this.api.addTracksToPlaylist(pl.id, newUris);
       }
 
       stats.added   += newUris.length;
